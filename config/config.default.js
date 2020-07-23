@@ -18,6 +18,28 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // disable csrf for post
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
+
+  // use secret for encryption
+  config.jwt = {
+    secret: '123456',
+  };
+
+  // the config of sequelize
+  config.sequelize = {
+    dialect: 'mysql',
+    host: '127.0.0.1',
+    port: 3306,
+    database: 'blog',
+    username: 'root',
+    password: '19841029Qq',
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
